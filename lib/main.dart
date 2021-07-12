@@ -5,14 +5,14 @@ void main(List<String> args) {
       Project(
           name: "Creative Utilities",
           version: 16,
-          target: "./",
+          target: "./Compiled Datapacks",
           generate: CUWidget()),
       args);
   createProject(
       Project(
           name: "Pendants",
           version: 16,
-          target: "./",
+          target: "./Compiled Datapacks",
           generate: PendantWidget()),
       args);
 }
