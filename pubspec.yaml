@@ -1,5 +1,6 @@
 name: objDWorkspace
 dependencies:
   objd: ^0.4.2
+  objd_crafting: ^0.2.0
 environment:
   sdk: ">=2.10.0 <3.0.0"
