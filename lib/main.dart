@@ -96,7 +96,7 @@ List<Widget> mainCUFile = [
 ];
 
 List<Slot> PendantCheck = [Slot.MainHand, Slot.OffHand];
-List<Widget> mainPendantFile = [Storage.set("pcraft", key: key, value: value),For(create: (index) {
+List<Widget> mainPendantFile = [Storage.set("pcraft", key: "PlayerInventory", value: Storage.get(name, key: key)),For(create: (index) {
   return If(Storage.get(name, key: "Storage"), then: then)
 }, to: PendantCheck.length)];
 
