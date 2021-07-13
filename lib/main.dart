@@ -96,9 +96,12 @@ List<Widget> mainCUFile = [
 ];
 
 List<Slot> PendantCheck = [Slot.MainHand, Slot.OffHand];
-List<Widget> mainPendantFile = [Storage.set("pcraft", key: "PlayerInventory", value: Storage.get(name, key: key)),For(create: (index) {
-  return If(Storage.get(name, key: "Storage"), then: then)
-}, to: PendantCheck.length)];
+List<Widget> mainPendantFile = [
+  Command(
+      "execute if entity @p[nbt={SelectedItem:{id:'minecraft:nautilus_shell', tag:{swiftswim:1}}}] run effect give @a[nbt={SelectedItem:{id:'minecraft:nautilus_shell', tag:{swiftswim:1}}}] dolphins_grace 1 0"),
+  Command(
+      "execute if entity @p[nbt={SelectedItem:{id:'minecraft:nautilus_shell', tag:{swiftswim:1}}}] run effect give @a[nbt={SelectedItem:{id:'minecraft:nautilus_shell', tag:{swiftswim:1}}}] water_breathing 1 0")
+];
 
 class CUWidget extends Widget {
   @override
