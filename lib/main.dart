@@ -5,21 +5,21 @@ void main(List<String> args) {
   createProject(
       Project(
           name: "Creative Utilities",
-          version: 16,
+          version: 17,
           target: "./Compiled Datapacks/",
           generate: CUWidget()),
       args);
   createProject(
       Project(
           name: "Pendants",
-          version: 16,
+          version: 17,
           target: "./Compiled Datapacks/",
           generate: PendantWidget()),
       args);
   createProject(
       Project(
           name: "Pendants Crafting",
-          version: 16,
+          version: 17,
           target: "./Compiled Datapacks/",
           generate: CraftingTable(
               name: "pcraft",
@@ -88,10 +88,8 @@ List<Widget> mainCUFile = [
   Scoreboard.trigger("butcher", addIntoLoad: true),
   Do.Until(Tag("butcherDisabled", entity: Entity.All()), then: [
     Trigger.enable(butcher, addNew: false),
-    If(Condition.score(Score(Entity.Player(), "butcher").matches(1)), then: [
-      Kill(Entity(selector: "e", type: EntityType("!player"))),
-      butcher.set(0)
-    ])
+    If(Condition.score(Score(Entity.Player(), "butcher").matches(0)),
+        then: [Kill(Entity(selector: "e", type: EntityType("!player")))])
   ])
 ];
 
